@@ -1,0 +1,47 @@
+.grid-button {
+    display: table-cell;
+    text-align: center;
+}
+
+.grid {
+    display: inline-block;
+    height: 5px;
+    position: relative;
+    width: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.grid:after, .grid:before {
+    content: '';
+    position: absolute;
+    background-color: #FFF;
+    display: inline-block;
+    height: 5px;
+    left: 0;
+    width: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.grid.open {
+    background-color: #FFF;
+}
+.grid.open:after {
+    top: 10px;
+}
+.grid.open:before {
+    top: -10px;
+}
+
+.grid.close {
+    background-color: transparent;
+    transform: scale(0.9);
+}
+.grid.close:after, .grid.close:before {
+    top: 0;
+    transform-origin: 50% 50%;
+}
+.grid.close:before {
+    transform: rotate(135deg);
+}
+.grid.close:after {
+    transform: rotate(45deg);
+}
